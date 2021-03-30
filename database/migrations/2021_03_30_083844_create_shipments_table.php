@@ -19,6 +19,7 @@ class CreateShipmentsTable extends Migration
             $table->bigInteger('payment_id');
             $table->bigInteger('order_id');
             $table->string('status')->default('pending');
+            $table->dateTime('shipment_date')->nullable();
             $table->timestamps();
         });
     }
