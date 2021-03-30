@@ -51,4 +51,12 @@ class User extends Authenticatable
     public function shipments(){
         return $this->hasMany(Shipment::class);
     }
+
+    public function shippingAddresses(){
+        return $this->hasOne(Address::class, 'id', 'shipping_address');
+    }
+
+    public function billingAddresses(){
+        return $this->hasOne(Address::class, 'id', 'billing_address');
+    }
 }
