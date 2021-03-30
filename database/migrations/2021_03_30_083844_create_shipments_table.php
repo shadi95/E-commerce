@@ -15,6 +15,10 @@ class CreateShipmentsTable extends Migration
     {
         Schema::create('shipments', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
+            $table->bigInteger('payment_id');
+            $table->bigInteger('order_id');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
