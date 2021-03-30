@@ -15,6 +15,11 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->double('amount');
+            $table->bigInteger('user_id');
+            $table->bigInteger('order_id');
+            $table->dateTime('paid_on');
+            $table->text('payment_reference');
             $table->timestamps();
         });
     }
